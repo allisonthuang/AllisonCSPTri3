@@ -9,10 +9,13 @@
 # 2. function references will be executed directly file.function()
 
 import tt0_1
+import loops
+import fibonacci
 
 main_menu = [
     ["Swap", tt0_1.swap],
     ["Matrix", tt0_1.matrix],
+    ["Fibonacci", fibonacci.fibo],
 ]
 
 # Submenu list of [Prompt, Action]
@@ -24,10 +27,10 @@ sub_menu = [
     ["Better Christmas Tree", tt0_1.driver],
 ]
 
-patterns_sub_menu = [
-    ["Patterns", None],
-    ["PreFuncy", None],
-    ["Funcy", None],
+list_sub_menu = [
+    ["For loop", loops.for_loop],
+    ["While Loop", loops.while_loop],
+    ["Recursive Loop", loops.recursive_loop],
 ]
 
 # Menu banner is typically defined by menu owner
@@ -35,12 +38,12 @@ border = "=" * 25
 banner = f"\n{border}\nPlease Select An Option\n{border}"
 
 
-# def patterns_submenuc
-# using patterns_sub_menu list:
-# patterns_submenuc works similarly to menuc
-def patterns_submenuc():
+# def list_submenuc
+# using list_sub_menu list:
+# list_submenuc works similarly to menuc
+def list_submenuc():
     title = "Class Submenu" + banner
-    m = questy.Menu(title, patterns_sub_menu)
+    m = questy.Menu(title, list_sub_menu)
     m.menu()
 
 
@@ -52,7 +55,7 @@ def menu():
     title = "Function Menu" + banner
     menu_list = main_menu.copy()
     menu_list.append(["Animations", submenu])
-    # menu_list.append(["Patterns", patterns_submenu])
+    menu_list.append(["List", list_submenu])
     buildMenu(title, menu_list)
 
 # def submenu
@@ -61,9 +64,9 @@ def menu():
 def submenu():
     title = "Function Submenu" + banner
     buildMenu(title, sub_menu)
-def patterns_submenu():
+def list_submenu():
     title = "Function Submenu" + banner
-    buildMenu(title, patterns_sub_menu)
+    buildMenu(title, list_sub_menu)
 
 def buildMenu(banner, options):
     # header for menu
