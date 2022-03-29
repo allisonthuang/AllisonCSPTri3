@@ -8,15 +8,11 @@
 # 1. file names will be run by exec(open("filename.py").read())
 # 2. function references will be executed directly file.function()
 
-import tt0_1
-import loops
-import fibonacci
+from week0 import tt0_1
+from week1 import loops, fibonacci
+from week2 import palindrome
 
-main_menu = [
-    ["Swap", tt0_1.swap],
-    ["Matrix", tt0_1.matrix],
-    ["Fibonacci", fibonacci.fibo],
-]
+main_menu = []
 
 # Submenu list of [Prompt, Action]
 # Works similarly to main_menu
@@ -28,9 +24,16 @@ sub_menu = [
 ]
 
 list_sub_menu = [
+    ["Matrix", tt0_1.matrix],
     ["For loop", loops.for_loop],
     ["While Loop", loops.while_loop],
     ["Recursive Loop", loops.recursive_loop],
+]
+
+math_sub_menu = [
+    ["Swap", tt0_1.swap],
+    ["Fibonacci", fibonacci.fibo],
+    ["Palidrone", palindrome.tester],
 ]
 
 # Menu banner is typically defined by menu owner
@@ -54,8 +57,9 @@ def list_submenuc():
 def menu():
     title = "Function Menu" + banner
     menu_list = main_menu.copy()
-    menu_list.append(["Animations", submenu])
-    menu_list.append(["List", list_submenu])
+    menu_list.append(["Fun", submenu])
+    menu_list.append(["Data", list_submenu])
+    menu_list.append(["Math", math_submenu])
     buildMenu(title, menu_list)
 
 # def submenu
@@ -67,6 +71,9 @@ def submenu():
 def list_submenu():
     title = "Function Submenu" + banner
     buildMenu(title, list_sub_menu)
+def math_submenu():
+    title = "Function Submenu" + banner
+    buildMenu(title, math_sub_menu)
 
 def buildMenu(banner, options):
     # header for menu

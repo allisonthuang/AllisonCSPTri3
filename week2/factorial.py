@@ -2,20 +2,20 @@
 
 class Factorial:
     def __init__(self):
-        self.factorSeq = [1,1]
+        self.factorialSeq = [1,1]
 
   #__call__ is a special function in Python that, when implemented inside a class,
     # gives its instances (objects) the ability to behave like a function.
     # It means after implementing __call__ method inside the Python class,
     # we can invoke its instances like a function
     def __call__(self, n):
-        if n < len(self.factorSeq):
-            return self.factorSeq[n]
+        if n < len(self.factorialSeq):
+            return self.factorialSeq[n]
         else:
             # Compute the requested Factorial number
-            factor_number = n * self(n - 1)
-            self.factorSeq.append(factor_number)
-        return self.factorSeq[n]
+            factorial_number = n * self(n - 1)
+            self.factorialSeq.append(factorial_number)
+        return self.factorialSeq[n]
 
 factor_of = Factorial() # object instantiation and run __init__ method
 print(factor_of(5)) # object running __call__ method
@@ -23,7 +23,7 @@ print(factor_of(5)) # object running __call__ method
 def tester():
     # Make a factorial object
     while True:
-        factor_of = Factorial()
+        factorial_of = Factorial()
         n = input("Enter the number of terms: ")
         try:
             n = int(n)
@@ -33,9 +33,9 @@ def tester():
             if not (isinstance(n, int) and n >= 0):
                 raise ValueError
             print("{0}! is: ".format(n))
-            print(factor_of(n)) # print the nth term
+            print(factorial_of(n)) # print the nth term
             print("Factorial sequence of 0 to {0} is: ".format(n))
-            print([factor_of(i) for i in range(0,n+1)])
+            print([factorial_of(i) for i in range(0,n+1)])
             break
         except:
             print(f'Positive integer number expected, got "{n}" Try again.')
