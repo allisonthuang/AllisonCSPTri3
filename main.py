@@ -10,7 +10,7 @@
 
 from week0 import tt0_1
 from week1 import loops, fibonacci
-from week2 import palindrome
+from week2 import factorial, factors, palindrome
 
 main_menu = []
 
