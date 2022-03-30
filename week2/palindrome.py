@@ -5,17 +5,17 @@ class Palindrome:
         n = n.lower()
         revn = n[::-1]
         if revn == n:
-            self.result = (j + " is a palidrome.")
+            self.result = (j + " is a palindrome.")
         else:
-            self.result = (j + " is not a palidrome.")
+            self.result = (j + " is not a palindrome.")
 
         return self.result
 
-palidrome_of = Palindrome()  # object instantiation and run __init__ method
+palindrome_of = Palindrome()  # object instantiation and run __init__ method
 
 
 
-def palidrone(j):
+def palindrome(j):
     # Remove special characters from a string and changes all letters to lowercase
     n = ''.join(filter(str.isalnum, j))
     n = n.lower()
@@ -23,14 +23,14 @@ def palidrone(j):
     revn = n[::-1]
     # checks if the string is the same as the reversed string
     if revn == n:
-        print(j + " is a palidrome.")
+        print(j + " is a palindrome.")
     else:
-        print(j + " is not a palidrome.")
+        print(j + " is not a palindrome.")
 
 
 def tester():
-    j = input()
-    print(palidrome_of(j))  # print the nth term
+    j = input("Enter a word: ")
+    print(palindrome_of(j))  # print the nth term
 
 
 if __name__ == "__main__":
