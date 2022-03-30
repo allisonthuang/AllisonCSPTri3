@@ -33,6 +33,8 @@ list_sub_menu = [
 math_sub_menu = [
     ["Swap", tt0_1.swap],
     ["Fibonacci", fibonacci.fibo],
+    ["Factorial", factorial.tester],
+    ["Factors", factors.tester],
     ["Palidrone", palindrome.tester],
 ]
 
