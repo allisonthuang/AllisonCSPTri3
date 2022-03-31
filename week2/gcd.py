@@ -38,7 +38,7 @@ def print_gcd():
     print("The GCD : ",end="")
     print(f())
     
-  print("---------------------------------------------------")
+    print("---------------------------------------------------")
 
     print("This is Imperative Form")
     print(igcd(x,y))
